@@ -37,7 +37,7 @@ trainer = TicTacToeTrainer(
 )
 
 # 4. 训练模型 (从头开始)
-#history = trainer.train(epochs=1000)
+history = trainer.train(epochs=1000)
 
-last_epoch = trainer.load_checkpoint('checkpoints/checkpoint_epoch_100.pdparams')
-history = trainer.train(epochs=1000, start_epoch=last_epoch)
+#last_epoch = trainer.load_checkpoint('checkpoints/checkpoint_epoch_100.pdparams')
+#history = trainer.train(epochs=1000, start_epoch=last_epoch)

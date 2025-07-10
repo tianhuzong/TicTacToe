@@ -117,7 +117,11 @@ class TicTacToeDataGenerator:
         # 创建输入张量
         x_channel = np.array([[1 if board[r][c] == 'X' else 0 for c in range(3)] for r in range(3)], dtype=np.float32)
         o_channel = np.array([[1 if board[r][c] == 'O' else 0 for c in range(3)] for r in range(3)], dtype=np.float32)
-        input_data = np.stack([x_channel, o_channel], axis=0)
+
+        if current_player == 'X':
+            input_data = np.stack([x_channel, o_channel], axis=0)  # 通道0=X, 通道1=O
+        else:
+            input_data = np.stack([o_channel, x_channel], axis=0)  # 通道0=O, 通道1=X
         
         # 创建标签
         label = best_row * 3 + best_col
