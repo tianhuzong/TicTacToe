@@ -166,4 +166,4 @@ class TicTacToeDataGenerator:
         
 if __name__ == "__main__":
     generator = TicTacToeDataGenerator()
-    generator.generate_and_save(num_samples=5000)
+    generator.generate_and_save(num_samples=5000,save_dir='../data')

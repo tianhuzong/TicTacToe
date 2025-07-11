@@ -5,7 +5,7 @@ from tic_tac_toe import TicTacToeModel
 from alpha_beta import check_winner, is_board_full, find_best_move
 
 model = TicTacToeModel()
-model.set_state_dict(paddle.load("checkpoints/best_model.pdparams")["model_state_dict"])
+model.set_state_dict(paddle.load("../checkpoints/best_model.pdparams")["model_state_dict"])
 
 def predict_move(model, board, player):
     """

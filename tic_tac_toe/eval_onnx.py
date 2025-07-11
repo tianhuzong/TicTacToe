@@ -15,7 +15,7 @@ def process_data(board, player):
     return input_data
 
 def best_move(board, player):
-    model_path = "./models/tictactoe.onnx"
+    model_path = "../models/tictactoe.onnx"
     onnx_session = ort.InferenceSession(model_path)
     input_data = process_data(board, player)
     output_data = __predict(onnx_session, input_data)[0]
