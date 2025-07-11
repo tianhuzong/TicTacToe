@@ -200,5 +200,5 @@ class TicTacToeTrainer:
             if (epoch + 1) % save_freq == 0 or (epoch + 1) == epochs:
                 saved_path = self.save_checkpoint(epoch + 1)
                 print(f'Checkpoint saved to {saved_path}')
-        
+        paddle.save(self.model.state_dict(), 'models/tictactoe.pdparams')
         return self.history
